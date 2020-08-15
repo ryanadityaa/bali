@@ -1,0 +1,599 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+    font-family: arial;
+}
+html {
+    scroll-behavior: smooth;
+}
+@font-face{
+    font-family: big_noodle_titling;
+    src: url(font/big_noodle_titling.ttf);
+}
+@font-face{
+    font-family: Balinese Family;
+    src: url(font/Balinese\ Family.ttf);
+}
+.container-nav{
+    position: fixed;
+    z-index:99;
+    width: 100%;
+}
+nav {
+    background-color: white;
+    padding: 0 60px;
+    box-shadow: 0px 0px 6px black;
+    position: relative;
+}
+nav ul {
+    display: flex;
+    list-style: none;
+    flex-wrap: wrap;
+    align-items: center;
+}
+nav ul li{
+    padding: 15px 0;
+    cursor: pointer;   
+}
+nav ul li.items{
+    width: auto;
+    margin: 0 14px;
+    text-align: center;
+    position: relative;
+    order: 3;
+}
+nav ul li.items:after{
+    position: absolute;
+    content: '';
+    left: 0;
+    bottom: 5px;
+    height: 2px;
+    width: 100%;
+    background:#166AD5;
+    opacity: 0;
+    transition: all 0.2s linear;
+    
+}
+nav ul li.items:hover:after{
+    opacity: 1;
+    bottom: 8px;
+}
+nav ul li a{
+    color: black;
+    text-decoration: none;
+    font-family: big_noodle_titling;
+    font-size: 26px;
+}
+nav ul li a:hover{
+    text-decoration: none;
+}
+nav ul li.logo{
+    flex: 1;
+    font-family: big_noodle_titling;
+    font-size: 36px;
+}
+nav ul li i{
+    font-size: 32px;
+}
+nav ul li.btn{
+    display: none;
+}
+nav ul li.btn.hide i::before{
+    content: '\f00d';
+}
+.bg-banner{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    position: relative;
+}
+.bg-banner .banner-text{
+    margin-top: 13%;
+    padding: 0 60px;
+    width: 45%;
+}
+.bg-banner .banner-text h2{
+    font-family: Balinese Family;
+    text-transform: uppercase;
+    font-size: 270px;
+    letter-spacing: 20px;
+    margin-top: -22px;
+}
+.bg-banner .banner-text p{
+    font-family: arial;
+    font-size: 22px;
+    margin-top: -70px;
+    letter-spacing: -0.5px;
+    
+   
+}
+.bg-banner .banner-text a{
+    background:linear-gradient(to right,#166AD5,rgb(40, 128, 230));
+    padding: 15px 15px;
+    padding-left:20px;
+    padding-right: 20px;
+    position: relative;
+    border-radius: 25px;
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    top: 8px;
+}
+.bg-banner .banner-text a:hover{
+    opacity: 0.8;
+    
+}
+.bg-banner .banner-image{
+    width: 40%;
+    display: flex;
+}
+.bg-banner .banner-image img{
+    width: 120%;
+}
+
+.container-dua{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: 100%;
+    padding: 0 60px;
+    margin-top: 105px;
+}
+.container-dua .image{
+    display: flex;
+    width: 50%;
+}
+.container-dua .image .image-2 img{
+    width: 100%;
+}
+.container-dua .content-dua{
+    width: 38%;
+    padding-top: 7%;
+    
+}
+.container-dua .content-dua h2{
+    font-family: big_noodle_titling;
+    justify-content: center;
+    align-content: center;
+    display: flex;
+    font-size: 55px;
+}
+.container-dua .content-dua p{
+    font-family: arial;
+    font-size: 20px;
+    padding-top: 30px;
+}
+.container-dua .content-dua .underline{
+    background:linear-gradient(to right,#166AD5,rgb(40, 128, 230));
+    width: 120px;
+    height: 4px;
+    float: right;
+    margin-top: 30px;
+}
+
+
+.container-tiga{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    margin-top:150px;
+}
+.container-underline{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    padding-top: 15px;
+
+}
+.container-underline .icon-underline{
+    width: 15%;
+    height: 4px;
+    background:linear-gradient(to right,#166AD5,rgb(40, 128, 230));
+  
+}
+.container-tiga h2{
+    font-family: big_noodle_titling;
+    font-size: 48px;
+}
+.container-empat{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    padding-top: 30px;
+}
+.wrapper{
+    display: flex;
+    width:100%;
+    justify-content: center;
+    align-content: center;
+    flex-wrap: wrap;
+}
+.wrapper .card{
+    width: 340px;
+    height: 360px;
+    position: relative;
+    display:flex;
+    align-items: flex-end;
+    margin: 20px;
+    transition: .4s;
+    border-radius: 8px;
+}
+
+.wrapper .card::before{
+   content: '';
+   position: absolute;
+   top: 0;
+   left: 0;
+   display: block;
+   width: 100%;
+   height: 100%;
+   background:rgb(0, 0, 0,0.7);
+   z-index: 2;
+   opacity: 0;
+   border-radius: 8px;
+   transition: .4s;
+}
+.wrapper .card:hover::before{
+    opacity: 1;
+    transition: .4s;
+    border-radius: 8px;
+}
+.wrapper .card img{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    object-fit: cover;
+    top:0;
+    left: 0;
+    border-radius: 5px;
+}
+.wrapper .card .info{
+    position: relative;
+    z-index: 3;
+    color: white;
+    opacity: 0;
+    width: 100%;
+    height: 100%;
+    padding-top: 110px;
+    /*background-color: red;*/
+    
+}
+.wrapper .card .info{
+    position: relative;
+    z-index: 3;
+    color: white;
+    opacity: 0;
+    width: 100%;
+    height: 100%;
+    padding-top: 115px;   
+}
+.wrapper .card .info h2{
+    font-family:  big_noodle_titling;
+    font-size: 55px;
+    display: flex;
+    justify-content: center;
+    align-content: center;  
+    text-align: center;
+}
+.wrapper .card .info a{
+    background:linear-gradient(to right,#166AD5,rgb(40, 128, 230));
+    padding: 10px; 
+    margin:0 30px;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-content: center;  
+}
+.wrapper .card .info:hover{
+    opacity: 1;
+}
+.info .btn{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    
+}
+.info .btn i{
+    font-size: 20px;
+    margin: 0 5px;
+    position: relative;
+    top: 1.6px;
+    left: -2px;
+}
+
+.container-lima{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    margin-top: 30px;
+}
+.container-lima .middle {
+    position: absolute;
+    width: 20%;
+  
+}
+.container-lima .middle .btn{
+    position: relative;
+    display: block;
+    font-size: 20px;
+    color: black;
+    padding: 10px 10px;
+    border : 2px solid #166AD5;
+    overflow: hidden;
+    transition: 1s all ease;
+}
+.container-lima .middle .btn:hover{
+    color: white;
+}
+.container-lima .middle .btn::before{
+    background:linear-gradient(to right,#166AD5,rgb(33, 114, 207));
+    content: "";
+    z-index:-1;
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    right: 0%;
+    bottom: 0%;
+    transition: all 0.6s ease;
+    
+}
+.btn3::before{
+    width: 0;
+    height: 100%;
+  
+}
+.btn3:hover::before{
+    width: 100%;
+    
+}
+
+.container-enam{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    margin-top: 14%;
+}
+.container-enam h2{
+    font-family:  big_noodle_titling;
+    font-size: 50px;
+}
+
+
+.container-tujuh{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-content: center;
+    margin-top:70px;
+}
+.container-tujuh .box{
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+    width: 320px;
+    height: 370px;
+    margin: 0 30px;
+    
+}
+.container-tujuh .box img{
+    position: absolute;
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    border-radius: 6px;
+}
+.container-tujuh .box .text{
+    z-index: 3;
+    width: 100%;
+   
+}
+.container-tujuh .box .text h3{
+    background:linear-gradient(to right,#166AD5,rgb(28, 87, 155));
+    color:white;
+    font-family: arial;
+    font-size: 21px;
+    padding: 12px 12px;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    top:90%;
+    position: relative;
+    border-top-right-radius: 20px;
+    border-top-left-radius: 3px;
+}
+
+
+.footer{
+    width: 100%;
+    height: 30px;
+    margin-top: 20%;
+}
+
+.footer .text{
+    background:linear-gradient(to right,#166AD5,rgb(28, 87, 155));
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+.footer .text h2{
+    color: white;
+    font-size: 20px;
+    font-family: arial;
+    padding: 18px 18px;
+}
+@media all and (max-width:900px){
+    nav{
+        padding: 5px 30px;
+    }
+    nav ul li.items{
+        width: 100%;
+        display: none;
+       
+    }
+    nav ul li.items.show{
+        display: block;
+        
+    }
+    nav ul li.btn{
+        display: block;
+        
+    }
+    nav ul li.items:hover{
+        background-color: #166AD5;
+        transition: all 0.4s; 
+        border-radius: 5px;       
+    }
+    nav ul li.items {
+        color: black;
+        transition: all .2s;
+    }
+    nav ul li.items :hover{
+        color: white;
+        transition:all .2s;
+    }
+    nav ul li.items::after{
+        display: none;
+    }
+} 
+
+@media (max-width: 575.98px) {
+    nav{
+        padding: 0px 50px;
+    }
+    .container-nav i{
+        left:35px;
+        position: relative;
+    }
+    .container-nav .logo{
+        position: relative;
+        left: -25px;
+        font-size: 32px;
+    }
+    .bg-banner{
+        flex-direction: column-reverse;
+        display: flex;
+        justify-content: center;
+        align-content: center;
+    }
+    .bg-banner .banner-image{
+        width: 100%;
+        margin-top: 76px;
+    }
+    .bg-banner .banner-text{
+        width: 100%;
+        margin-top: 12%;
+        padding: 0px 50px;
+    }
+    .bg-banner .banner-text h2{
+        font-size: 150px;
+        display: flex;
+        justify-content: center;
+        align-content: center;
+        letter-spacing: 10px;
+        
+    }
+    .bg-banner .banner-text p{
+        width: 100%;
+        font-size: 18px;
+        padding-top: 30px;
+    }
+    .bg-banner .banner-text a{
+        font-size: 16px;
+        display: flex;
+        justify-content: center;
+        align-content: center;
+        padding: 15px 15px;
+        
+    }
+    .bg-banner .banner-image img{
+        /*border-bottom-left-radius: 20px;*/
+    }
+
+
+    .container-dua{
+        flex-direction: column;
+        padding: 0px 50px;
+    }
+    .container-dua .image{
+        width: 100%;
+    }
+    .container-dua .content-dua {
+        width: 100%;
+        margin-top: 15px;
+    }
+    .container-dua .content-dua p{
+        font-size: 18px;
+        margin-top: 40px;
+    }
+    .container-dua .content-dua h2{
+        font-size: 48px;
+        float: left;
+    }
+    .container-dua .content-dua .underline {
+        margin-top:20px;
+    }
+    .container-underline{
+        padding-top: 15px;
+    }
+    .container-underline .icon-underline{
+        width: 35%;
+        height: 4px;
+        background:linear-gradient(to right,#166AD5,rgb(40, 128, 230));
+        
+    }
+
+    .container-tiga{
+      margin-top: -0.2px;
+      padding-top: 97px;
+    }
+    .container-tiga h2{
+        font-size: 44px;
+    }
+    .wrapper .card{
+        width: 320px;
+        height: 350px;
+        
+    }
+
+    .container-empat{
+        padding-top: 15px;
+    }
+
+    .container-lima .middle{
+        width: 55%;
+        margin-top: -10px;
+    }
+
+    .container-lima .middle .btn{
+        font-size: 18px;
+    }
+    .container-enam{
+        margin-top: 160px;
+    }
+    .container-enam h2{
+        font-size: 44px;
+    }
+    .container-tujuh{
+        flex-direction: column;
+        flex-wrap: wrap;
+        width: 100%;
+        margin-top: 20px;
+    }
+    .container-tujuh .box{
+        margin: 30px 0;
+    }
+    
+
+    .footer{
+        width: 100%;
+        height: 30px;
+        margin-top: 30%;
+    }
+    .footer .text h2{
+        color: white;
+        font-size: 18px;
+        font-family: arial;
+        padding: 18px 18px;
+    }
+}
